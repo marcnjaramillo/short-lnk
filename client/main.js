@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom';
 import { Tracker } from 'meteor/tracker';
 
 import { routes, onAuthChange } from '../imports/routes/routes';
+import '../imports/startup/simple-schema-configuration';
+
 
 import './main.html';
 
 Tracker.autorun(() => {
   const isAuthenticated = !!Meteor.userId();
   onAuthChange(isAuthenticated);
-})
+});
 
 Meteor.startup(() => {
   ReactDOM.render(
