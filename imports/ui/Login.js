@@ -8,7 +8,9 @@ class Login extends Component {
   };
 
   componentWillMount() {
-    if (Meteor.userId()) {
+    if (!Meteor.userId()) {
+      this.props.history.replace('/');
+    } else {
       this.props.history.replace('/links');
     }
   };
