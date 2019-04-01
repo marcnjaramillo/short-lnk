@@ -19,7 +19,7 @@ const AddLink = () => {
 
     Meteor.call('links.insert', url, (err, res) => {
       if (!err) {
-        onClose
+        onClose()
       } else {
         setError(err.reason);
       }
