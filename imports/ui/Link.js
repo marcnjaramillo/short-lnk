@@ -11,10 +11,12 @@ const Link = () => {
 
   return (
     <div>
-      <PrivateHeader title="Your Links" />
-      <Filters />
-      <AddLink />
-      <LinksList />
+      <PrivateHeader title="Short Lnk" />
+      <div className="wrapper">
+        <Filters />
+        <AddLink />
+        <LinksList />
+      </div>
     </div>
   )
 };

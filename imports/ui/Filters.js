@@ -21,8 +21,8 @@ const Filters = () => {
 
   return (
     <div>
-      <label>
-        <input type="checkbox" checked={!showVisible} onChange={handleChange} />
+      <label className="checkbox">
+        <input type="checkbox" checked={!showVisible} onChange={handleChange} className="checkbox__box" />
         Show hidden links
       </label>
     </div>

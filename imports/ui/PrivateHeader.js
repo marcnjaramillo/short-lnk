@@ -9,9 +9,11 @@ const onLogout = () => {
 const PrivateHeader = (props) => {
 
   return (
-    <div>
-      <h1>{props.title}</h1>
-      <button onClick={onLogout}>Logout</button>
+    <div className="title-bar">
+      <div className="title-bar__content">
+        <h1 className="title-bar__title">{props.title}</h1>
+        <button onClick={onLogout} className="button button--link">Logout</button>
+      </div>
     </div>
   )
 };

@@ -42,24 +42,26 @@ const AddLink = () => {
 
   return (
     <div>
-      <button onClick={onOpen}>+ Add Link</button>
+      <button onClick={onOpen} className="button">+ Add Link</button>
       <Modal 
         isOpen={isOpen} 
         contentLabel="Add link" 
         onAfterOpen={() => urlRef.current.focus()}
         onRequestClose={onClose}
+        className="boxed-view__box"
+        overlayClassName="boxed-view boxed-view--modal"
       >
         <h1>Add a Link</h1>
         {error ? <p>{error}</p> : undefined}
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} className="boxed-view__form">
           <input 
             type="text"
             ref={urlRef}
             value={url || ''}
             onChange={onChange}
             placeholder="URL" />
-          <button>Add Link</button>
-          <button onClick={onClose}>Cancel</button>
+          <button className="button">Add Link</button>
+          <button type="button" onClick={onClose} className="button button--secondary">Cancel</button>
         </form>
       </Modal>
     </div>

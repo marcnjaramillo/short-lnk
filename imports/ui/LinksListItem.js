@@ -40,20 +40,20 @@ class LinksListItem extends Component {
       visitedMessage = `(last visited ${momentNow.fromNow()})`;
     }
 
-    return <p>{this.props.visitedCount} {visitMessage}  {visitedMessage} </p>;
+    return <p className="item__message">{this.props.visitedCount} {visitMessage}  {visitedMessage} </p>;
   }
 
   render() {
     return (
-      <div>
-        <p>{this.props.url}</p>
-        <p>{this.props.shortUrl}</p>
+      <div className="item">
+        <h2>{this.props.url}</h2>
+        <p className="item__message">{this.props.shortUrl}</p>
         {this.renderStats()}
-        <a href={this.props.shortUrl} target="_blank" rel="noopener noreferrer nofollow">Visit</a>
-        <button ref="copy" data-clipboard-text={this.props.shortUrl}>
+        <a href={this.props.shortUrl} target="_blank" rel="noopener noreferrer nofollow" className="button button--pill">Visit</a>
+        <button ref="copy" data-clipboard-text={this.props.shortUrl} className="button--pill">
           {this.state.copiedText ? 'Copied' : 'Copy'}
         </button>
-        <button onClick={this.isVisible}>
+        <button onClick={this.isVisible} className="button--pill">
           {this.props.visible ? 'Hide' : 'Unhide'}
         </button>
       </div>
